@@ -24,16 +24,24 @@
     font-family: var(--sec-font);
     font-weight: 400;
     font-size: 14px;
-    color: white;
+    color: white !important;
 }
 
 .menu-item {
     margin: 0 20px;
-    color: white !important;
+    /* color: white !important; */
     font-family: var(--sec-font) !important;
     transition: all linear 0.4s;
     padding: 5px 10px;
     border-radius: 10px;
+}
+
+.text-white {
+    color: whtie !important;
+}
+
+.text-black {
+    color: #222 !important;
 }
 
 .menu-item:hover {

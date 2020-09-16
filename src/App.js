@@ -3,6 +3,14 @@ import './App.css';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import fakeData from './fakeData/fakeData';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Login from './components/Login/Login';
+import Hotel from './components/Hotel/Hotel';
 
 export const JourneyContext = createContext();
 export const BookingContext = createContext();
@@ -14,8 +22,23 @@ function App() {
   return (
     <JourneyContext.Provider value={[selectedPlace, setSelectedPlace]} className="app">
       <BookingContext.Provider value={[proceedToBooking, setProceedToBooking]}>
-        <Header></Header>
-        <Home></Home>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/hotel">
+              <Hotel></Hotel>
+            </Route>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+          </Switch>
+        </Router>
       </BookingContext.Provider>
     </JourneyContext.Provider>
   );

@@ -7,6 +7,7 @@ import { JourneyContext } from '../../App';
 
 const PlaceImage = () => {
     const [selectedPlace, setSelectedPlace] = useContext(JourneyContext);
+
     return (
         <Row className="ml-auto">
             {
@@ -24,7 +25,7 @@ const PlaceImage = () => {
                     }
 
                     return (
-                        <Col onClick={() => setSelectedPlace(`${item.place}`)} className="offset-md-1 col-md-3 image-holder" style={imageStyle}>
+                        <Col onClick={() => setSelectedPlace(`${item.place}`)} className={`image-holder ml-3 ${selectedPlace === item.place ? 'image-outline' : ''}`} style={imageStyle}>
                             <p className="image-title">{item.place}</p>
                         </Col>
                     );

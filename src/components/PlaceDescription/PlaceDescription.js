@@ -16,12 +16,15 @@ const PlaceDescription = () => {
                     <>
                         <h1 className="place-title">{item.place}</h1>
                         <p className="place-description">{proceedToBooking ? item.longDescription : item.shortDescription}</p>
-                        <Button 
-                            onClick={() => setProceedToBooking(!proceedToBooking)}
-                            style={{ marginLeft: '0', marginTop: '15px' }} className="main-button" variant="outline-light"
-                            >
-                            Booking<FontAwesomeIcon style={{ color: '#222', marginLeft: '10px' }} icon={faArrowRight} />
-                        </Button>
+                        {
+                            !proceedToBooking &&
+                            <Button 
+                                onClick={() => setProceedToBooking(!proceedToBooking)}
+                                style={{ marginLeft: '0', marginTop: '15px' }} className="main-button" variant="outline-light"
+                                >
+                                Booking<FontAwesomeIcon style={{ color: '#222', marginLeft: '10px' }} icon={faArrowRight} />
+                            </Button>
+                        }
                     </>
                 )
             }

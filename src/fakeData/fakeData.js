@@ -5,7 +5,7 @@ const fakeData = [
         stays: 252,
         date: 'Apr 13-17', 
         shortDescription: "Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...",
-        longDescription: "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
+        longDescription: "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts.",
         hotel: [
             {
                 imageUrl: 'https://i.ibb.co/QvySjL1/Rectangle-26.png',
@@ -58,10 +58,10 @@ const fakeData = [
         stays: 150,
         date: 'Feb 08-27', 
         shortDescription: "It is said the name Sreemangal (or Srimangal) is named after Sri Das and Mangal Das; two brothers who settled on the banks of the Hail Haor. A copper plate ...",
-        longDescription: "It is said the name Sreemangal (or Srimangal) is named after Sri Das and Mangal Das; two brothers who settled on the banks of the Hail Haor. A copper plate of Raja Marundanath from the 11th century was found in Kalapur. During an excavation at Lamua, an ancient statue of Ananta Narayan was dug out. In 1454, the Nirmai Shiva Bari was built and still stands today. Srimangal thana was established in 1912.",
+        longDescription: "It is said the name Sreemangal (or Srimangal) is named after Sri Das and Mangal Das; two brothers who settled on the banks of the Hail Haor. A copper plate of Raja Marundanath from the 11th century was found in Kalapur. During an excavation at Lamua, an ancient statue of Ananta Narayan was dug out.",
         hotel: [
             {
-                imageUrl: 'https://i.ibb.co/QvySjL1/Rectangle-26.png',
+                imageUrl: 'https://i.ibb.co/2k2dFMx/3d-rendering-interior-and-exterior-design.jpg',
                 name: 'Hotel Paharika',
                 guest: 3,
                 bed: 2,
@@ -75,7 +75,7 @@ const fakeData = [
                 total: 150,
             },
             {
-                imageUrl: 'https://i.ibb.co/kGsnTD1/Rectangle-27.png',
+                imageUrl: 'https://i.ibb.co/C25WQdp/hotel-room.jpg',
                 name: 'Ganchil Resort',
                 guest: 2,
                 bed: 1,
@@ -89,7 +89,7 @@ const fakeData = [
                 total: 90,
             },
             {
-                imageUrl: 'https://i.ibb.co/fxcQv07/Rectangle-28.png',
+                imageUrl: 'https://i.ibb.co/qDLDRBZ/hotel-room-design-trends-italianbark-interior-design-blog.jpg',
                 name: 'Hotel SkyLand',
                 guest: 6,
                 bed: 3,
@@ -111,10 +111,10 @@ const fakeData = [
         stays: 90,
         date: 'Oct 15-31', 
         shortDescription: "The Sundarbans is a mangrove area in the delta formed by the confluence of the Ganges, Brahmaputra and Meghna Rivers in the Bay of Bengal ...",
-        longDescription: "The Sundarbans is a mangrove area in the delta formed by the confluence of the Ganges, Brahmaputra and Meghna Rivers in the Bay of Bengal. It spans from the Hooghly River in India's state of West Bengal to the Baleswar River in Bangladesh. It comprises closed and open mangrove forests, agriculturally used land, mudflats and barren land, and is intersected by multiple tidal streams and channels.",
+        longDescription: "The Sundarbans is a mangrove area in the delta formed by the confluence of the Ganges, Brahmaputra and Meghna Rivers in the Bay of Bengal. It spans from the Hooghly River in India's state of West Bengal to the Baleswar River in Bangladesh.",
         hotel: [
             {
-                imageUrl: 'https://i.ibb.co/QvySjL1/Rectangle-26.png',
+                imageUrl: 'https://i.ibb.co/8g13TPk/3d-rendering-interior-and-exterior-design.jpg',
                 name: 'Tirandaz-2',
                 guest: 20,
                 bed: 8,
@@ -128,7 +128,7 @@ const fakeData = [
                 total: 120,
             },
             {
-                imageUrl: 'https://i.ibb.co/kGsnTD1/Rectangle-27.png',
+                imageUrl: 'https://i.ibb.co/sCmk3bv/900-modern-hotel-room.jpg',
                 name: 'Badhshah-1',
                 guest: 40,
                 bed: 12,
@@ -142,7 +142,7 @@ const fakeData = [
                 total: 179,
             },
             {
-                imageUrl: 'https://i.ibb.co/fxcQv07/Rectangle-28.png',
+                imageUrl: 'https://i.ibb.co/yhhtPJK/photo-1568495248636-6432b97bd949.jpg',
                 name: 'Khulsi-3',
                 guest: 20,
                 bed: 15,
