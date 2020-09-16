@@ -22,7 +22,6 @@ function Location() {
         zoom: 11
     };
     return (
-        // Important! Always set the container height explicitly
         <div style={{ height: '100vh', width: '100%' }}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: 'AIzaSyCpu5a_7uaRGFBlYX33hUhH67FoqJfb_TM' }}

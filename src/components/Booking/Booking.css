@@ -16,6 +16,27 @@ label {
     font-weight: 500;
 }
 
+.date-picker .form-field {
+    margin: 0 5px;
+}
+
+.input-box {
+    background-color: #F2F2F2 !important;
+    border: none !important;
+    padding: 10px;
+    border-radius: 5px;
+    width: 220px;
+}
+
+.date-input {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.calender-icon {
+    width: 8%;
+}
+
 input::placeholder {
     font-size: 14px;
     font-weight: 600;

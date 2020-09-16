@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Login from './components/Login/Login';
 import Hotel from './components/Hotel/Hotel';
+import NoMatch from './components/NoMatch/NoMatch';
 
 export const JourneyContext = createContext();
 export const BookingContext = createContext();
@@ -36,6 +37,9 @@ function App() {
             </Route>
             <Route exact path="/">
               <Home></Home>
+            </Route>
+            <Route path="*">
+              <NoMatch></NoMatch>
             </Route>
           </Switch>
         </Router>
