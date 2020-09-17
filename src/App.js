@@ -12,6 +12,7 @@ import {
 import Login from './components/Login/Login';
 import Hotel from './components/Hotel/Hotel';
 import NoMatch from './components/NoMatch/NoMatch';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const JourneyContext = createContext();
 export const BookingContext = createContext();
@@ -41,9 +42,9 @@ function App() {
               <Route path="/login">
                 <Login></Login>
               </Route>
-              <Route path="/hotel">
+              <PrivateRoute path="/hotel">
                 <Hotel></Hotel>
-              </Route>
+              </PrivateRoute>
               <Route exact path="/">
                 <Home></Home>
               </Route>

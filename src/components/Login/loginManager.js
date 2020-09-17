@@ -105,8 +105,26 @@ export const handleGithubSignIn = () => {
 
 export const handleSignOut = () => {
     return firebase.auth().signOut()
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+    .then(res => {
+        const newUserInfo = {
+            name: '',
+            email: '',
+            photo: '',
+            error: '',
+            success: false
+        }
+        return newUserInfo;
+    })
+    .catch(err => {
+        const newUserInfo = {
+            name: '',
+            email: '',
+            photo: '',
+            error: err.message,
+            success: false
+        }
+        return newUserInfo;
+    })
 }
 
 const updateUserInfo = (name, email, photo) => {

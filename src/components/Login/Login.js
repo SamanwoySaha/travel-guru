@@ -7,10 +7,14 @@ import { UserContext } from '../../App';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { createUserWithEmailAndPassword, handleFbSignIn, handleGithubSignIn, handleGoogleSignIn, handleTwitterSignIn, initializeFirebaseFramework, signInWithEmailAndPassword } from './loginManager';
+import { useHistory, useLocation } from 'react-router-dom';
 
 initializeFirebaseFramework();
 
 const Login = () => {
+    let history = useHistory();
+    let location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [passwordShown, setPasswordShown] = useState(false);
     const [confirmPasswordShown, setConfirmPasswordShown] = useState(false);
@@ -20,44 +24,61 @@ const Login = () => {
     password.current = watch("password", "");
 
     const onSubmit = data => {
-        const {firstName, lastName, email, password} = data;
-        if(newUser){
+        const { firstName, lastName, email, password } = data;
+        if (newUser) {
             createUserWithEmailAndPassword(firstName, lastName, email, password)
-            .then(res => {
-                const newUserInfo = {...loggedInUser};
-                newUserInfo.isNewUser = true;
-                setLoggedInUser(newUserInfo);
-            })
+                .then(res => {
+                    const newUserInfo = { ...loggedInUser };
+                    newUserInfo.isNewUser = true;
+                    setLoggedInUser(newUserInfo);
+                })
         }
-        else{
+        else {
             signInWithEmailAndPassword(email, password)
-            .then(res=> setLoggedInUser(res))
-            .catch(err => console.log(err))
-        }     
+                .then(res => {
+                    handleResponse(res, true);
+                })
+                .catch(err => console.log(err));
+        }
     };
 
     const googleSignIn = () => {
         handleGoogleSignIn()
-            .then(res => setLoggedInUser(res))
+            .then(res => {
+                handleResponse(res, true);
+            })
             .catch(err => console.log(err));
     }
 
     const fbSignIn = () => {
         handleFbSignIn()
-            .then(res => setLoggedInUser(res))
+            .then(res => {
+                handleResponse(res, true);
+            })
             .catch(err => console.log(err));
     }
 
     const twitterSignIn = () => {
         handleTwitterSignIn()
-            .then(res => setLoggedInUser(res))
+            .then(res => {
+                handleResponse(res, true);
+            })
             .catch(err => console.log(err));
     }
 
     const githubSignIn = () => {
         handleGithubSignIn()
-            .then(res => setLoggedInUser(res))
+            .then(res => {
+                handleResponse(res, true);
+            })
             .catch(err => console.log(err));
+    }
+
+    const handleResponse = (res, redirect) => {
+        setLoggedInUser(res);
+        if(redirect){
+            history.replace(from);
+        }
     }
 
     return (
@@ -135,6 +156,7 @@ const Login = () => {
                 </p>
             </Container>
             <div className="d-flex flex-column my-4">
+                <div className="text-center position-relative mb-3"><div className="line"></div><span>Or</span><div className="line"></div></div>
                 <Button onClick={fbSignIn} className="special-btn">
                     <img className="special-btn-icon" src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="" />Continue with Facebook
                 </Button>

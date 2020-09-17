@@ -8,7 +8,7 @@ const HotelDetail = (props) => {
 
     return (
         <div className="d-flex my-3">
-           <img src={imageUrl} alt="hotelImage" style={{width: '270px', height: '188px'}}/>
+           <img src={imageUrl} alt="hotelImage" style={{width: '270px', height: '188px', borderRadius: '10px'}}/>
            <div className="ml-4">
                <h5 className="hotel-name">{name}</h5>
                 <p>

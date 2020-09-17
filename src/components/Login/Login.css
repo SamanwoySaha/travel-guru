@@ -79,3 +79,20 @@
     cursor: pointer;
 }
 
+.line {
+    width: 150px;
+    height: 2px;
+    background-color: lightgrey;
+    margin: 0 auto;
+    position: relative;
+}
+
+.line:nth-of-type(1){
+    top: 14px;
+    right: 90px;
+}
+.line:nth-of-type(2){
+    bottom: 12px;
+    left: 90px;
+}
+

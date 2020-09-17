@@ -9,11 +9,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
 import { BookingContext, UserContext } from '../../App';
+import { handleSignOut } from '../Login/loginManager';
 
 const Header = () => {
     const { pathname } = useLocation();
     const [proceedToBooking, setProceedToBooking] = useContext(BookingContext);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const signOut = () => {
+        handleSignOut()
+        .then(res => setLoggedInUser(res))
+        .catch(err => console.log(err));
+    }
 
     return (
         <div>
@@ -48,7 +55,7 @@ const Header = () => {
                                     <p className="text-black mt-3 ml-2 user-name">
                                         {loggedInUser.name}
                                     </p>
-                                    <Button className="main-button" variant="outline-light">Logout</Button>
+                                    <Button onClick={signOut} className="main-button" variant="outline-light">Logout</Button>
                                 </div>
                                 : <Button className="main-button" variant="outline-light">Login</Button>
                         }

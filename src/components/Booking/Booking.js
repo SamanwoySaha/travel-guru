@@ -8,6 +8,7 @@ const Booking = () => {
     const [proceedToBooking, setProceedToBooking] = useContext(BookingContext);
     const [selectedPlace, setSelectedPlace] = useContext(JourneyContext);
     const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
 
     return (
         <div className="ml-auto booking">
@@ -33,7 +34,7 @@ const Booking = () => {
                         <label for="to">To</label>
                         <br />
                         <div className="input-box d-flex">
-                            <DatePicker className="date-input" selected={startDate} onChange={date => setStartDate(date)} />
+                            <DatePicker className="date-input" selected={endDate} onChange={date => setEndDate(date)} />
                             <img className="calender-icon" src="https://i.ibb.co/DWfL7zK/calender-icon.png" alt="calender-icon" />
                         </div>
                     </div>
