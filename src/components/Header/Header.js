@@ -33,12 +33,12 @@ const Header = () => {
                 <Container>
                     <Link to="/home" onClick={() => setProceedToBooking(false)}>
                         {
-                            (pathname === '/home' || pathname === '/booking') ? <img className="logo" src="https://i.ibb.co/R7sy5yh/Group-1330.png" alt="Group-1330" />
+                            (pathname === '/' || pathname === '/home' || pathname === '/booking') ? <img className="logo" src="https://i.ibb.co/R7sy5yh/Group-1330.png" alt="Group-1330" />
                                 : <img className="logo" src="https://i.ibb.co/891KxGt/Logo.png" alt="Logo" />
                         }
                     </Link>
                     {
-                        (pathname === '/home' || pathname === '/booking') &&
+                        (pathname === '/' || pathname === '/home' || pathname === '/booking') &&
                         <Form inline className="ml-auto">
                             <div className="search-field">
                                 <FontAwesomeIcon style={{ color: 'white', marginRight: '10px' }} icon={faSearch} />
@@ -47,10 +47,10 @@ const Header = () => {
                         </Form>
                     }
                     <Nav className="ml-auto">
-                        <Nav.Link className={`menu-item ${pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#news">News</Nav.Link>
-                        <Nav.Link className={`menu-item ${pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#destination">Destination</Nav.Link>
-                        <Nav.Link className={`menu-item ${pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#blog">Blog</Nav.Link>
-                        <Nav.Link className={`menu-item ${pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#contact">Contact</Nav.Link>
+                        <Nav.Link className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#news">News</Nav.Link>
+                        <Nav.Link className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#destination">Destination</Nav.Link>
+                        <Nav.Link className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#blog">Blog</Nav.Link>
+                        <Nav.Link className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#contact">Contact</Nav.Link>
                     </Nav>
                     {
                         loggedInUser.success ?
