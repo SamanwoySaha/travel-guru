@@ -19,6 +19,7 @@ export const BookingContext = createContext();
 function App() {
   const [selectedPlace, setSelectedPlace] = useState(fakeData[0].place);
   const [proceedToBooking, setProceedToBooking] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useState();
 
   return (
     <JourneyContext.Provider value={[selectedPlace, setSelectedPlace]} className="app">
