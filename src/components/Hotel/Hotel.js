@@ -14,13 +14,13 @@ const Hotel = () => {
                 {
                     fakeData.filter(item => item.place === selectedPlace).map(item => {
                         return (
-                            <>
+                            <div key={item.place}>
                                 <p className="sub-heading">{item.stays} stays {item.date}</p>
                                 <h2 className="heading">Stays in {item.place}</h2>
                                 {
-                                    item.hotel.map(hotel => <HotelDetail hotel={hotel}></HotelDetail>)
+                                    item.hotel.map(hotel => <HotelDetail key={hotel.name} hotel={hotel}></HotelDetail>)
                                 }
-                            </>
+                            </div>
                         );
                     })
                 }

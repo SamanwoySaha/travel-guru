@@ -47,10 +47,10 @@ const Header = () => {
                         </Form>
                     }
                     <Nav className="ml-auto">
-                        <Nav.Link className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#news">News</Nav.Link>
-                        <Nav.Link className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#destination">Destination</Nav.Link>
-                        <Nav.Link className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#blog">Blog</Nav.Link>
-                        <Nav.Link className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#contact">Contact</Nav.Link>
+                        <Link onClick={() => setProceedToBooking(false)} className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} to="/">News</Link>
+                        <Link className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} to="/hotel">Destination</Link>
+                        <Link onClick={() => setProceedToBooking(false)} className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} to="/">Blog</Link>
+                        <Link onClick={() => setProceedToBooking(false)} className={`menu-item ${pathname === '/' || pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} to="/">Contact</Link>
                     </Nav>
                     {
                         loggedInUser.success ?

@@ -13,7 +13,7 @@ const PlaceDescription = () => {
         <div className="place-info">
             {
                 fakeData.filter(item => item.place === selectedPlace).map(item =>
-                    <>
+                    <div key={item.place}>
                         <h1 className="place-title">{item.place}</h1>
                         <p className="place-description">{proceedToBooking ? item.longDescription : item.shortDescription}</p>
                         {
@@ -25,7 +25,7 @@ const PlaceDescription = () => {
                                 Booking<FontAwesomeIcon style={{ color: '#222', marginLeft: '10px' }} icon={faArrowRight} />
                             </Button>
                         }
-                    </>
+                    </div>
                 )
             }
         </div>

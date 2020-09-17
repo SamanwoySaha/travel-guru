@@ -25,7 +25,7 @@ const PlaceImage = () => {
                     }
 
                     return (
-                        <Col onClick={() => setSelectedPlace(`${item.place}`)} className={`image-holder ml-3 ${selectedPlace === item.place ? 'image-outline' : ''}`} style={imageStyle}>
+                        <Col key={item.place} onClick={() => setSelectedPlace(`${item.place}`)} className={`image-holder ml-3 ${selectedPlace === item.place ? 'image-outline' : ''}`} style={imageStyle}>
                             <p className="image-title">{item.place}</p>
                         </Col>
                     );

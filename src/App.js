@@ -6,8 +6,7 @@ import fakeData from './fakeData/fakeData';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Login from './components/Login/Login';
 import Hotel from './components/Hotel/Hotel';
@@ -25,7 +24,7 @@ function App() {
     name: '',
     email: '',
     photo: '',
-    success: null, 
+    success: null,
     error: '',
   });
 

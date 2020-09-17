@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { BookingContext, JourneyContext } from '../../App';
 import './Booking.css';
 import DatePicker from 'react-datepicker';
@@ -9,21 +9,26 @@ const Booking = () => {
     const [selectedPlace, setSelectedPlace] = useContext(JourneyContext);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    const history = useHistory();
+
+    const handleSubmit = () => {
+        history.push('/hotel');
+    }
 
     return (
         <div className="ml-auto booking">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="form-field">
-                    <label for="origin">Origin</label>
+                    <label htmlFor="origin">Origin</label>
                     <input className="form-control input-box" type="text" name="origin" id="origin" placeholder="Dhaka" required />
                 </div>
                 <div className="form-field">
-                    <label for="destination">Destination</label>
+                    <label htmlFor="destination">Destination</label>
                     <input className="form-control input-box" type="text" name="destination" id="destination" placeholder={selectedPlace} required />
                 </div>
                 <div className="d-flex align-items-space-between date-picker">
                     <div className="form-field">
-                        <label for="from">From</label>
+                        <label htmlFor="from">From</label>
                         <br />
                         <div className="input-box d-flex">
                             <DatePicker className="date-input" selected={startDate} onChange={date => setStartDate(date)} />
@@ -31,7 +36,7 @@ const Booking = () => {
                         </div>
                     </div>
                     <div className="form-field">
-                        <label for="to">To</label>
+                        <label htmlFor="to">To</label>
                         <br />
                         <div className="input-box d-flex">
                             <DatePicker className="date-input" selected={endDate} onChange={date => setEndDate(date)} />
@@ -39,7 +44,7 @@ const Booking = () => {
                         </div>
                     </div>
                 </div>
-                <Link to="/hotel"><input className="booking-btn" type="submit" value="Start Booking" /></Link>
+                <input className="booking-btn" type="submit" value="Start Booking" />
             </form>
         </div>
     );

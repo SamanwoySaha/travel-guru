@@ -137,7 +137,7 @@ const Login = () => {
                         </div>
                     }
                     {
-                        !loggedInUser.success &&
+                        !loggedInUser.success && !(loggedInUser.isNewUser && newUser) &&
                         <h6 className="text-center" style={{ color: 'red' }}>{loggedInUser.error}</h6>
                     }
                     {

@@ -134,4 +134,5 @@ const updateUserInfo = (name, email, photo) => {
         displayName: name,
         email: email,
         photoURL: photo,
-    })}
+    })
+}
