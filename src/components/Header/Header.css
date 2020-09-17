@@ -63,3 +63,9 @@
 .main-button:hover {
     color: white !important;
 }
+
+.user-name {
+    font-family: var(--sec-font);
+    font-size: 18px;
+    font-weight: 600;
+}

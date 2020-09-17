@@ -15,35 +15,44 @@ import NoMatch from './components/NoMatch/NoMatch';
 
 export const JourneyContext = createContext();
 export const BookingContext = createContext();
+export const UserContext = createContext();
 
 function App() {
   const [selectedPlace, setSelectedPlace] = useState(fakeData[0].place);
   const [proceedToBooking, setProceedToBooking] = useState(false);
-  const [loggedInUser, setLoggedInUser] = useState();
+  const [loggedInUser, setLoggedInUser] = useState({
+    name: '',
+    email: '',
+    photo: '',
+    success: null, 
+    error: '',
+  });
 
   return (
     <JourneyContext.Provider value={[selectedPlace, setSelectedPlace]} className="app">
       <BookingContext.Provider value={[proceedToBooking, setProceedToBooking]}>
-        <Router>
-          <Header></Header>
-          <Switch>
-            <Route path="/home">
-              <Home></Home>
-            </Route>
-            <Route path="/login">
-              <Login></Login>
-            </Route>
-            <Route path="/hotel">
-              <Hotel></Hotel>
-            </Route>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route path="*">
-              <NoMatch></NoMatch>
-            </Route>
-          </Switch>
-        </Router>
+        <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+          <Router>
+            <Header></Header>
+            <Switch>
+              <Route path="/home">
+                <Home></Home>
+              </Route>
+              <Route path="/login">
+                <Login></Login>
+              </Route>
+              <Route path="/hotel">
+                <Hotel></Hotel>
+              </Route>
+              <Route exact path="/">
+                <Home></Home>
+              </Route>
+              <Route path="*">
+                <NoMatch></NoMatch>
+              </Route>
+            </Switch>
+          </Router>
+        </UserContext.Provider>
       </BookingContext.Provider>
     </JourneyContext.Provider>
   );
