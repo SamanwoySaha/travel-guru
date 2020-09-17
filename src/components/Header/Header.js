@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { BookingContext, UserContext } from '../../App';
 import { handleSignOut } from '../Login/loginManager';
 
@@ -18,8 +18,13 @@ const Header = () => {
 
     const signOut = () => {
         handleSignOut()
-        .then(res => setLoggedInUser(res))
-        .catch(err => console.log(err));
+            .then(res => setLoggedInUser(res))
+            .catch(err => console.log(err));
+    }
+
+    const history = useHistory();
+    const handleGoToLogin = () => {
+        history.push('/login');
     }
 
     return (
@@ -47,19 +52,17 @@ const Header = () => {
                         <Nav.Link className={`menu-item ${pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#blog">Blog</Nav.Link>
                         <Nav.Link className={`menu-item ${pathname === '/home' || pathname === '/booking' ? 'text-white' : 'text-black'}`} href="#contact">Contact</Nav.Link>
                     </Nav>
-                    <Link to="/login">
-                        {
-                            loggedInUser.success ?
-                                <div className="d-flex align-items-center">
-                                    <img src="https://img.icons8.com/cotton/50/000000/user-male.png" alt="" style={{width: '12%'}}/>
-                                    <p className="text-black mt-3 ml-2 user-name">
-                                        {loggedInUser.name}
-                                    </p>
-                                    <Button onClick={signOut} className="main-button" variant="outline-light">Logout</Button>
-                                </div>
-                                : <Button className="main-button" variant="outline-light">Login</Button>
-                        }
-                    </Link>
+                    {
+                        loggedInUser.success ?
+                            <div className="d-flex align-items-center">
+                                <img src="https://img.icons8.com/cotton/50/000000/user-male.png" alt="" style={{ width: '12%' }} />
+                                <p className="text-black mt-3 ml-2 user-name">
+                                    {loggedInUser.name}
+                                </p>
+                                <Button onClick={signOut} className="main-button" variant="outline-light">Logout</Button>
+                            </div>
+                            : <Button onClick={handleGoToLogin} className="main-button" variant="outline-light">Login</Button>
+                    }
                 </Container>
             </Navbar>
         </div>
