@@ -2,7 +2,7 @@
 
 ![Travel Guru Homepage](https://i.imgur.com/S15QrFW.png)
 
-## [Live Link](https://ss-travel-guru.web.app/)
+## [Live Link](https://ss-travel-guru.web.app/)  ## [Resume Link](https://drive.google.com/file/d/1sDs2G2lW3txrw5QsLxhjJ0xSHE5-ImWL/view?usp=sharing)
 
 A Single Page Travelling App where users can book journey place, date, destinations and also view the journey location on google map.
 
